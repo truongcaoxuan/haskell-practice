@@ -21,3 +21,6 @@ playGame secret guesses = do putStr "? "
                                    playGame secret (guesses + 1)
                              else do putStrLn "Too big!"
                                      playGame secret (guesses + 1)   
+--Run code from $
+--$ ghc guessingGameWithIfThen.hs
+--$ ./guessingGameWithIfThen
