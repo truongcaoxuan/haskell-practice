@@ -15,3 +15,7 @@ fac n
 fac :: (Integral a) => a -> a
 fac 0 = 1
 fac n = n * fac (n-1)
+
+--
+factorial :: (Integral a) => a -> a
+factorial  n = product [1..n]
