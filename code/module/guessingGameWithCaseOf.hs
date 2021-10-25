@@ -20,3 +20,7 @@ playGame secret guesses = do putStr "Enter your guess: "
                                GT -> do putStrLn "Too high!"
                                         playGame secret (guesses + 1)
                                EQ -> do return (guesses + 1)
+
+--Run code from $
+--$ ghc guessingGameWithCaseOf.hs
+--$ ./guessingGameWithCaseOf
