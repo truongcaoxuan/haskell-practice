@@ -23,7 +23,12 @@ choco install -y haskell-dev
 ```
 refreshenv
 ```
-#5 Reopen "Windows Powershell (Admin)"
+#5 Reopen "Windows Powershell (Admin)", enter Haskell shell
 ```
 ghci
 ```
+#6 Exit Haskell shell
+```
+:quit
+```
+
