@@ -2,7 +2,7 @@
 -- Question 1
 -- Add the type signatures for the functions below and then remove the comments and try to compile.
 -- (Use the types presented in the lecture.)
-----------------
+--SOLUTION
 
 -- f1 x y z = x ** (y/z)
 f1 :: Double -> Double -> Double -> Double
@@ -25,7 +25,7 @@ f4 x y z = x == (y ++ z)
 -- Why should we define type signatures of functions? 
 -- How can they help you? 
 -- How can they help others?
-----------------
+--SOLUTION
 -- Why should we define type signatures of functions? 
 ---- Restrictions on data 
 
@@ -41,7 +41,7 @@ f4 x y z = x == (y ++ z)
 -- Question 3
 -- Why should you define type signatures for variables? 
 -- How can they help you?
-----------------
+-- ANSWER
 -- Why should you define type signatures for variables? 
 -- How can they help you?
 
