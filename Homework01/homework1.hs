@@ -13,10 +13,10 @@ multiThree x = x * 3
 -- Define a function that calculates the area of a circle.
 -- calAreaCircle r = pi  * r * r
 -- calAreaCircle r = pi  * r ** 2
-calAreaCircle r = pi  * r ^ 2
+calAreaCircle r = pi * r ^ 2
 
 -- Question 4
--- Define a function that calculates the volume of a cylinder by composing the previous function together with the height of the cylinder. 
+-- Define a function that calculates the volume of a cylinder by composing the previous function together with the height of the cylinder.
 -- calVolumeCylinder h r = (calAreaCircle r) * h
 -- calVolumeCylinder h r = calAreaCircle (r) * h
 calVolumeCylinder h r = calAreaCircle r * h
@@ -29,7 +29,7 @@ checkVolumeCylinder h r = calVolumeCylinder h r >= 42
 --------------------------------
 -- Run Function
 --------------------------------
-runHomework = do 
+runHomework = do
   print "test function multiThree"
   print $ multiThree 2
   print "------------------------------------"

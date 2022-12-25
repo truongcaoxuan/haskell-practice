@@ -1,16 +1,17 @@
 -- Question 1
 -- Write a function that checks if the monthly consumption of an electrical device is bigger, equal, or smaller than the maximum allowed and
--- returns a message accordingly. 
+-- returns a message accordingly.
 -- The function has to take the hourly consumption of an electrical device, the hours of daily use, and the maximum monthly consumption allowed.
 -- (Monthly usage = consumption (kW) * hours of daily use (h) * 30 days).
 
 -- SOLUTION:
 consCheck consUsed hoursUsed consMax
-    | consMonthly > consMax  = "Power consumption exceeds the maximum rated threshold"  
-    | consMonthly == consMax = "Power consumption reaches the maximum rated threshold"
-    | otherwise              = "You're save the world!"
-    where
-        consMonthly = consUsed * hoursUsed * 30
+  | consMonthly > consMax = "Power consumption exceeds the maximum rated threshold"
+  | consMonthly == consMax = "Power consumption reaches the maximum rated threshold"
+  | otherwise = "You're save the world!"
+  where
+    consMonthly = consUsed * hoursUsed * 30
+
 ----------------
 -- Question 2
 -- Prelude:
@@ -21,11 +22,11 @@ consCheck consUsed hoursUsed consMax
 
 -- SOLUTION
 consCheck' consUsed hoursUsed consMax
-    | consMonthly > consMax  = "Power consumption exceeds the maximum rated threshold. You're wasting: " ++ show (consMonthly - consMax) ++ "kWh per month!"
-    | consMonthly == consMax = "Power consumption reaches the maximum rated threshold"
-    | otherwise              = "You're save the world: " ++ show (consMax - consMonthly) ++ "kWh per month! Good job!!"
-    where
-        consMonthly = consUsed * hoursUsed * 30
+  | consMonthly > consMax = "Power consumption exceeds the maximum rated threshold. You're wasting: " ++ show (consMonthly - consMax) ++ "kWh per month!"
+  | consMonthly == consMax = "Power consumption reaches the maximum rated threshold"
+  | otherwise = "You're save the world: " ++ show (consMax - consMonthly) ++ "kWh per month! Good job!!"
+  where
+    consMonthly = consUsed * hoursUsed * 30
 
 ----------------
 -- Question 3
@@ -34,45 +35,45 @@ consCheck' consUsed hoursUsed consMax
 
 -- SOLUTION
 -- example 1
-areaOfTriangle a b c = 
-    let 
-        s = (a + b + c) / 2
-    in
-        sqrt (s * (s - a) * (s - b) * (s - c))
+areaOfTriangle a b c =
+  let s = (a + b + c) / 2
+   in sqrt (s * (s - a) * (s - b) * (s - c))
+
 -- example 2
-cylinderSurfaceArea r h = 
-    let sideArea = 2 * pi * r * h  
-        topArea = pi * r ^2  
-    in  sideArea + 2 * topArea 
+cylinderSurfaceArea r h =
+  let sideArea = 2 * pi * r * h
+      topArea = pi * r ^ 2
+   in sideArea + 2 * topArea
+
 ----------------
 -- Question 4
--- Write a function that takes in two numbers and returns their quotient 
+-- Write a function that takes in two numbers and returns their quotient
 --   such that it is not greater than 1.
--- Return the number as a string, and in case the divisor is 0, 
---   return a message why the division is not possible. 
--- To implement this function using both guards and if-then-else statements.  
+-- Return the number as a string, and in case the divisor is 0,
+--   return a message why the division is not possible.
+-- To implement this function using both guards and if-then-else statements.
 
 -- SOLUTION
 quotSmallerThanOne :: Double -> Double -> String
 quotSmallerThanOne a b
-  | a < 0 && b < 0 = if (a < b) then show (b/a) else show (a/b)
-  | a > b          = if a /= 0  then show (a/b) else "a is larger but 0"
-  | a < b          = if b /= 0  then show (b/a) else "b is larger but 0"
-  | otherwise      = if a /= 0  then "1"        else "a and b are both 0"
+  | a < 0 && b < 0 = if (a < b) then show (b / a) else show (a / b)
+  | a > b = if a /= 0 then show (a / b) else "a is larger but equal 0, division is not possible"
+  | a < b = if b /= 0 then show (b / a) else "b is larger but equal 0, division is not possible"
+  | otherwise = if a /= 0 then "1" else "a and b are both 0, division is not possible"
 
 ----------------
 -- Question 5
--- Write a function that takes in two numbers 
--- and calculates the sum of squares for the product and quotient of those numbers. 
--- Write the function such that you use a (where block inside a let expression) 
--- and a (let expression inside a where block). 
+-- Write a function that takes in two numbers
+-- and calculates the sum of squares for the product and quotient of those numbers.
+-- Write the function such that you use a (where block inside a let expression)
+-- and a (let expression inside a where block).
 
 -- SOLUTION
 letExpAndWhere :: Double -> Double -> Double
-letExpAndWhere a b = 
-    let 
-        sqrtProd = sqrt abProd where abProd = a * b --squares for the product with where block inside a let expression
-    in 
-        sqrtProd + sqrtQuot -- sum
-    where sqrtQuot = let abQuot = a / b --let expression inside a where block
-                     in sqrt abQuot --squares for quotient
+letExpAndWhere a b =
+  let sqrtProd = sqrt abProd where abProd = a * b --squares for the product with where block inside a let expression
+   in sqrtProd + sqrtQuot -- sum
+  where
+    sqrtQuot =
+      let abQuot = a / b --let expression inside a where block
+       in sqrt abQuot --squares for quotient
