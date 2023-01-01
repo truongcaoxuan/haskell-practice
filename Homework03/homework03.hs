@@ -1,4 +1,4 @@
--- Question 1
+ -- Question 1
 -- Write a function that checks if the monthly consumption of an electrical device is bigger, equal, or smaller than the maximum allowed and
 -- returns a message accordingly.
 -- The function has to take the hourly consumption of an electrical device, the hours of daily use, and the maximum monthly consumption allowed.
@@ -57,8 +57,8 @@ cylinderSurfaceArea r h =
 quotSmallerThanOne :: Double -> Double -> String
 quotSmallerThanOne a b
   | a < 0 && b < 0 = if (a < b) then show (b / a) else show (a / b)
-  | a > b = if a /= 0 then show (a / b) else "a is larger but equal 0, division is not possible"
-  | a < b = if b /= 0 then show (b / a) else "b is larger but equal 0, division is not possible"
+  | a > b = if a /= 0 then show (b / a) else "a is larger but equal 0, division is not possible"
+  | a < b = if b /= 0 then show (a / b) else "b is larger but equal 0, division is not possible"
   | otherwise = if a /= 0 then "1" else "a and b are both 0, division is not possible"
 
 ----------------
