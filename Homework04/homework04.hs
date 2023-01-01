@@ -17,13 +17,13 @@ getValue4th _ = 0
 -- SOLUTION
 -- Use multiple function definitions
 removeListElement :: [a] -> [a]
-removeListElement (_ : _ : xs) = xs
+removeListElement (x : y : _) = [x, y]
 removeListElement x = x
 
 -- Use case expressions
 removeListElement' :: [a] -> [a]
 removeListElement' list = case list of
-  (_ : _ : _ : xs) -> xs
+  (x : y : _) -> [x, y]
   x -> x
 
 -- Question 3
@@ -37,15 +37,15 @@ addTuple (x, y, z) = x + y + z
 -- SOLUTION
 checkListEmpty :: [a] -> Bool
 checkListEmpty [] = True
-checkListEmpty _  = False
+checkListEmpty _ = False
 
 -- Question 5
 -- Write the implementation of the tail function using pattern matching. But, instead of failing if
 -- the list is empty, return an empty list.
 -- SOLUTION
 tailFunction :: [a] -> [a]
-tailFunction (x:xs) = xs
-tailFunction []      = []
+tailFunction (x : xs) = xs
+tailFunction [] = []
 
 -- Question 6
 -- write a case expression wrapped in a function that takes an Int and adds one if it's even. Otherwise does nothing.
@@ -53,5 +53,5 @@ tailFunction []      = []
 -- SOLUTION
 addsOneIfEven :: Int -> Int
 addsOneIfEven x = case even x of
-    True  -> x + 1
-    False -> x
+  True -> x + 1
+  False -> x
