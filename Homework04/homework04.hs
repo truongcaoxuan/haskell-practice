@@ -55,3 +55,14 @@ addsOneIfEven :: Int -> Int
 addsOneIfEven x = case even x of
   True -> x + 1
   False -> x
+
+addsOneIfEven2 :: Int -> Int
+addsOneIfEven2 x = case x of
+  2 -> x + 1
+  3 -> x
+  _ -> 100
+
+addsOneIfEven' :: Int -> Int
+addsOneIfEven' x  
+  | even x = x + 1
+  | odd x = x
