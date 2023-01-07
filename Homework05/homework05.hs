@@ -37,8 +37,8 @@ votes :: [String]
 votes = ["Red", "Blue", "Green", "Blue", "Blue", "Red"]
 
 -- SOLUTION
-count :: String -> Int
-count x = length . filter (== x) $ votes
+countV :: String -> Int
+countV x = length . filter (== x) $ votes
 
 -- Question 6 --------------------------------
 -- Create a one-line function that filters `cars` by brand and then checks if there are any left.
@@ -67,8 +67,8 @@ runHomework = do
   print $ checkUpperCase "upptercaseYES"
   print "-------------------------------------------------------"
   print "Test result for question 5"
-  print $ count "Red"
-  print $ count "Blue"
+  print $ countV "Red"
+  print $ countV "Blue"
   print "-------------------------------------------------------"
   print "Test for question 6"
   print $ checkBrandAnyCarsLeft "Toyota"
