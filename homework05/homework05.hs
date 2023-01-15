@@ -28,8 +28,13 @@ curry' f x y =  f (x, y)
 -- Start with using just higher-order functions and build from there. 
 
 -- SOLUTION
+
 checkUpperCase :: String -> Bool
 checkUpperCase = any (`elem` ['A'..'Z'])
+
+import Data.Char (isUpper)
+checkUpperCase' :: String -> Bool
+checkUpperCase' = any isUpper
 
 -- Question 5 --------------------------------
 -- Create the `count` function that takes a team ("Red", "Blue", or "Green") and returns the amount of votes the team has inside `votes`.
