@@ -61,8 +61,8 @@ concat' = foldr (++) []
 -- []
 --SOLUTION
 zip' :: [a] -> [b] -> [(a, b)]
-zip' [] _bs = []
-zip' _as [] = []
+zip' [] _ = []
+zip' _ [] = []
 zip' (a : as) (b : bs) = (a, b) : zip' as bs
 
 
@@ -118,7 +118,16 @@ factorial n = accumulate 2 "1" ++ " = " ++ show result
       | x > n = string
       | otherwise = accumulate (x + 1) (string ++ "*" ++ show x)
     result = product [1 .. n]
-    
+
+factorial2 :: Int -> String
+factorial2 n
+  | n < 0 = "Can't be a negative integer!"
+  | n <= 1 = show n ++ "! -> 1 = 1"
+  | otherwise = show n ++ "! -> " ++ (printFact n) ++ " = " ++ show (calcFact n)
+      where calcFact 0 = 1
+            calcFact n = n * calcFact (n-1)
+            printFact n = concat (intersperse "*" (map show [1..n]))
+
 ---------------------------------------
 -- Question 8
 ---------------------------------------
