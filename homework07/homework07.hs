@@ -41,7 +41,15 @@
 -- Then uncomment the functions and try to compile.
 
 -- ANSWER
+f1 :: (Show a, Fractional a) => a -> a -> [Char] -> [Char]
+f1 x y z = show (x / y) ++ z
 
+f2 :: (Bounded a, Enum a, Eq a) => a -> a
+f2 x = if x == maxBound then minBound else succ x
+
+-- If you try to apply f2 to a number, you'll get an "Ambiguous type variable" error because
+-- it doesn't know which numeric type you're passing and not all numeric types are instances of Bounded.
+-- You could solve this by specifying that the number is an Int or Word, for example.
 
 ------------------------------------------------
 -- Question 5
