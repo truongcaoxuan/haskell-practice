@@ -85,5 +85,9 @@ containsGrape labels grape = any (\Label{grapes=xs} -> grape `elem` xs) labels
 
 -- This is a test list for the `containsGrape` function with an grape that is not in the list.
 grapeList = [larrosaRose,castiglioni,lePetitHaitLafitte]
-newGrape = "Pinot Noir"
+
+newGrape = "Pinot Noir" :: Grape
+
+-- containsGrape grapeList newGrape
+-- containsGrape grapeList grape1
 
